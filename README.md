@@ -5,11 +5,11 @@ FitLog is a dark, no-nonsense gym companion built with Next.js. Browse a library
 
 Technologies Used
 
-1.Next.js (App Router) — routing and page structure
-2.TypeScript — type-safe components and data models
-3.Tailwind CSS — styling and full responsive design
-4.React Context API — global state for Plan and Saved workouts
-5.react-toastify — toast notifications for user actions
+Next.js (App Router) — routing and page structure
+TypeScript — type-safe components and data models
+Tailwind CSS — styling and full responsive design
+React Context API — global state for Plan and Saved workouts
+react-toastify — toast notifications for user actions
 
 
 Features
