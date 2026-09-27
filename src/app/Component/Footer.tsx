@@ -10,7 +10,7 @@ const Footer = () => {
                     <Image src={logo} alt="footer photo" width={28} height={30}></Image>
                     <h2 className='font-bold text-2xl'>FITLOG</h2>
                 </div>
-                <p className='text-sm text-mauve-400'>@ 2026 Fitlog-Workout Libaray. Train hard ,log honest.</p>
+                <p className='text-sm text-mauve-400'>© 2026 FitLog — Workout Library. Train hard ,log honest.</p>
             </div>
         </div>
     );

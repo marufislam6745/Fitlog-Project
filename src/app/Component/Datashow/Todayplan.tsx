@@ -14,7 +14,7 @@ const Todayplan = ({ data }: { data: Fitlogtype }) => {
     const [mark,setMark]=useState<boolean>(false)
     const handleButton=()=>{
         setMark(true)
-        toast.success('Mark sa Done')
+        toast.success('Mark as Done')
     }
 
 

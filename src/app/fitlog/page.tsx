@@ -3,9 +3,18 @@ import FitlogCard from '../Component/FitlogCard';
 import { Fitlogtype } from '@/Type';
 
 const fitlogPromise = async () => {
-    const res = await fetch('https://api.api-store.workers.dev/api/fitlog')
-    const data = await res.json()
-    return data
+    try {
+        const res = await fetch('https://api.api-store.workers.dev/api/fitlog')
+        if (!res.ok) {
+            throw new Error("Failed to fetch")
+        }
+
+        const data = await res.json()
+        return data
+    } catch (error) {
+        console.log(error)
+        return []
+    }
 }
 
 const page = async () => {
@@ -16,7 +25,7 @@ const page = async () => {
             <p className='text-mauve-400 pb-4'>Twelve lifts covering every major muscle group.</p>
             <div className='lg:grid grid-cols-3 gap-4'>
                 {
-                    fitlogs.map((fitlog:Fitlogtype) => <FitlogCard key={fitlog.id} fitlog={fitlog}></FitlogCard>)
+                    fitlogs.map((fitlog: Fitlogtype) => <FitlogCard key={fitlog.id} fitlog={fitlog}></FitlogCard>)
                 }
             </div>
         </div>

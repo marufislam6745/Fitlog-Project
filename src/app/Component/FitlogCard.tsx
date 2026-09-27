@@ -19,7 +19,10 @@ const FitlogCard = ({ fitlog }: fitlogProps) => {
                     <Image className='object-cover' src={fitlog.image} alt='fitlog photo' width={390} height={350}></Image>
                 </figure>
                 <div className='p-5'>
-                    <p className='py-1 px-2 bg-lime-400 inline-block rounded-2xl text-sm font-bold text-black'>{fitlog.muscleGroups}</p>
+                    <div>
+                        <p className='py-1 px-2 bg-lime-400 inline-block rounded-2xl text-sm font-bold text-black mr-2'>{fitlog.muscleGroups[0]}</p>
+                        <p className={fitlog.muscleGroups.length>1?'py-1 px-2 bg-lime-400 inline-block rounded-2xl text-sm font-bold text-black':''}>{fitlog.muscleGroups[1]}</p>
+                    </div>
                     <h2 className="card-title mt-4">{fitlog.name}</h2>
                     <p className='text-sm text-mauve-400'>{fitlog.equipment}</p>
                     <div className='flex justify-start items-center gap-4 mt-4 pt-3 border-t border-mauve-500'>
