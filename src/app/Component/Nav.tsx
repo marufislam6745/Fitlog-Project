@@ -6,7 +6,7 @@ import { useContext } from 'react';
 import { Fitlogcontext } from '../context/fitlogContext';
 
 const Nav = () => {
-    const {plan,save}=useContext(Fitlogcontext)
+    const { plan, save } = useContext(Fitlogcontext)
     return (
         <div className="navbar lg:w-300 lg:mx-auto">
             <div className="navbar-start">
@@ -33,8 +33,8 @@ const Nav = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <p className="py-2 px-4 rounded-3xl hover:border border-lime-400"><Link href="">Plan <span className='bg-lime-400 text-black font-bold py-1 px-2 rounded-full'>{plan.length}</span></Link></p>
-                <p className="py-2 px-4 rounded-3xl hover:border border-lime-400"><Link href="">Saved <span className='bg-lime-400 text-black font-bold py-1 px-2 rounded-full'>{save.length}</span></Link></p>
+                <Link href="../myplan"><p className="py-2 px-4 rounded-3xl hover:border border-lime-400">Plan <span className='bg-lime-400 text-black font-bold py-1 px-2 rounded-full'>{plan.length}</span></p></Link>
+                <Link href="../myplan"><p className="py-2 px-4 rounded-3xl hover:border border-lime-400">Saved <span className='bg-lime-400 text-black font-bold py-1 px-2 rounded-full'>{save.length}</span></p></Link>
             </div>
         </div>
     );

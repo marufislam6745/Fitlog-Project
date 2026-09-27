@@ -27,7 +27,7 @@ const Page = () => {
             sortedData.sort((a, b) => a.duration - b.duration)
         }
         else if (sortby === "calories") {
-            sortedData.sort((a, b) => b.caloriesBurned - a.caloriesBurned)
+            sortedData.sort((a, b) => a.caloriesBurned - b.caloriesBurned)
         }
         return sortedData
     }
@@ -36,15 +36,15 @@ const Page = () => {
 
 
     return (
-        <div className='lg:w-300 mx-auto'>
+        <div className='lg:w-300 mx-auto mb-10'>
             <h2 className='text-3xl font-bold mt-10'>MY PLAN</h2>
             <p className='text-mauve-400'>Cap of five lifts for today.Finish them, then load more.</p>
-            
-                {button === "Today plan" ?
-                    <PlanShow></PlanShow> :
-                    <SavedataShow></SavedataShow>
-                }
-            
+
+            {button === "Today plan" ?
+                <PlanShow></PlanShow> :
+                <SavedataShow></SavedataShow>
+            }
+
 
             {/* name of each tab group should be unique 
             <div className="tabs tabs-lift ">
