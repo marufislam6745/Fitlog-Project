@@ -30,7 +30,7 @@ const Todayplan = ({ data }: { data: Fitlogtype }) => {
                     <button className='btn bg-black rounded-2xl text-white'>View Delails</button>
                 </Link>
                 <button className='btn bg-lime-400 rounded-2xl'><GoCheck />Mark as Done</button>
-                <p><Todayplandelet data={data}></Todayplandelet></p>
+                <Todayplandelet data={data}></Todayplandelet>
             </div>
         </div>
     );

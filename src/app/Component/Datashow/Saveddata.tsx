@@ -28,7 +28,7 @@ const Saveddata = ({ data }: { data: Fitlogtype }) => {
                 <Link href={`/fitlog/${data.id}`}>
                     <button className='btn bg-black rounded-2xl text-white'>View Delails</button>
                 </Link>
-                <p><Savedatadelet data={data}></Savedatadelet></p>
+                <Savedatadelet data={data}></Savedatadelet>
             </div>
         </div>
     );

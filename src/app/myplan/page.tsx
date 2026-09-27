@@ -6,6 +6,8 @@ import Todayplan from "../Component/Datashow/Todayplan";
 import Saveddata from "../Component/Datashow/Saveddata";
 import Blankdata from "../Component/Datashow/Blankdata";
 import { Fitlogtype } from "@/Type";
+import PlanShow from "../Component/Dynamicdata/PlanShow";
+import SavedataShow from "../Component/Dynamicdata/SavedataShow";
 
 //import { useState } from 'react';
 
@@ -37,20 +39,12 @@ const Page = () => {
         <div className='lg:w-300 mx-auto'>
             <h2 className='text-3xl font-bold mt-10'>MY PLAN</h2>
             <p className='text-mauve-400'>Cap of five lifts for today.Finish them, then load more.</p>
-            <div className='bg-mauve-900 border border-mauve-700 rounded-2xl flex justify-around items-center py-5 my-5'>
-                <div>
-                    <p>Exercises</p>
-                    <p></p>
-                </div>
-                <div>
-                    <p>Minutes</p>
-                    <p></p>
-                </div>
-                <div>
-                    <p>Calories</p>
-                    <p></p>
-                </div>
-            </div>
+            
+                {button === "Today plan" ?
+                    <PlanShow></PlanShow> :
+                    <SavedataShow></SavedataShow>
+                }
+            
 
             {/* name of each tab group should be unique 
             <div className="tabs tabs-lift ">
@@ -74,21 +68,19 @@ const Page = () => {
                         <button onClick={() => setButton("Today plan")} className={`${button === "Today plan" ? 'bg-lime-400 text-black' : ''} px-3 py-1.5 border border-lime-400 rounded-l-lg text-sm `}>Today plan</button>
                         <button onClick={() => setButton("Saved")} className={`${button === "Saved" ? 'bg-lime-400 text-black' : ''} px-3 py-1.5 border border-lime-400 rounded-r-lg text-sm `}>Saved</button>
                     </div>
-                
-                        <div className="flex items-center justify-end gap-2">
-                            <p className="bg-mauve-900 py-1.5 px-4 rounded-2xl">Sort By</p>
-                            <select
-                                value={sortby}
-                                onChange={(e) => setSortby(e.target.value)}
-                                defaultValue="Pick a Runtime"
-                                className="bg-mauve-900 p-2 rounded-xl"
-                            >
-                                <option value="rating">Rating</option>
-                                <option value="duration">Duration</option>
-                                <option value="calories">Calories</option>
-                            </select>
-                        </div>
-                    
+                    <div className="flex items-center justify-end gap-2">
+                        <p className="bg-mauve-900 py-1.5 px-4 rounded-2xl">Sort By</p>
+                        <select
+                            value={sortby}
+                            onChange={(e) => setSortby(e.target.value)}
+                            defaultValue="Pick a Runtime"
+                            className="bg-mauve-900 p-2 rounded-xl"
+                        >
+                            <option value="rating">Rating</option>
+                            <option value="duration">Duration</option>
+                            <option value="calories">Calories</option>
+                        </select>
+                    </div>
                 </div>
                 <div>
                     {button === "Today plan" ?

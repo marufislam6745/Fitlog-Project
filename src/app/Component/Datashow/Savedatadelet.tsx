@@ -6,6 +6,7 @@ import { toast } from 'react-toastify';
 
 const Savedatadelet = ({data}:{data:Fitlogtype}) => {
     const {save,setSave}=useContext(Fitlogcontext)
+    
     const handledelet=()=>{
         const delet=save.filter(value=>value.name!==data.name)
         setSave(delet)
