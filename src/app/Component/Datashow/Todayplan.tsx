@@ -1,14 +1,23 @@
 import { Fitlogtype } from '@/Type';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import React, { useState } from 'react';
 import { CiClock2 } from "react-icons/ci";
 import { CiStar } from "react-icons/ci";
 import { FaFire } from "react-icons/fa";
 import { GoCheck } from "react-icons/go";
 import Todayplandelet from './Todayplandelet';
+import { toast } from 'react-toastify';
 
 const Todayplan = ({ data }: { data: Fitlogtype }) => {
+    
+    const [mark,setMark]=useState<boolean>(false)
+    const handleButton=()=>{
+        setMark(true)
+        toast.success('Mark sa Done')
+    }
+
+
     return (
         <div className='lg:flex items-center justify-between my-4 p-4 bg-black rounded-2xl border border-mauve-700'>
             <div className='flex items-center mb-5'>
@@ -29,7 +38,7 @@ const Todayplan = ({ data }: { data: Fitlogtype }) => {
                 <Link href={`/fitlog/${data.id}`}>
                     <button className='btn bg-black rounded-2xl text-white'>View Delails</button>
                 </Link>
-                <button className='btn bg-lime-400 rounded-2xl'><GoCheck />Mark as Done</button>
+                <button className='btn bg-lime-400 rounded-2xl' onClick={()=>handleButton()}>{mark===true?(<p className='text-2xl'><GoCheck /></p>):"Mark as Done"}</button>
                 <Todayplandelet data={data}></Todayplandelet>
             </div>
         </div>

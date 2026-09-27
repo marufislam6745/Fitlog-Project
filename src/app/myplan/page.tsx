@@ -73,9 +73,9 @@ const Page = () => {
                         <select
                             value={sortby}
                             onChange={(e) => setSortby(e.target.value)}
-                            defaultValue="Pick a Runtime"
                             className="bg-mauve-900 p-2 rounded-xl"
                         >
+                            
                             <option value="rating">Rating</option>
                             <option value="duration">Duration</option>
                             <option value="calories">Calories</option>
