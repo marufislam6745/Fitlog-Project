@@ -3,7 +3,7 @@ import FitlogCard from '../Component/FitlogCard';
 
 const fitlogPromise = async () => {
     try {
-        const res = await fetch('https://api.api-store.workers.dev/api/fitlog')
+        const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_BASE_URL}`)
         if (!res.ok) {
             throw new Error("Failed to fetch")
         }

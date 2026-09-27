@@ -11,7 +11,7 @@ interface paramsProps {
 }
 const page = async ({ params }: paramsProps) => {
     const { fitlogid } = await params
-    const res = await fetch(`https://api.api-store.workers.dev/api/fitlog/${fitlogid}`)
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/${fitlogid}`)
     const data = await res.json()
 
     return (
