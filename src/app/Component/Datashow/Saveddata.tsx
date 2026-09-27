@@ -5,7 +5,7 @@ import React from 'react';
 import { CiClock2 } from "react-icons/ci";
 import { CiStar } from "react-icons/ci";
 import { FaFire } from "react-icons/fa";
-import { GoX } from "react-icons/go";
+import Savedatadelet from './Savedatadelet';
 
 const Saveddata = ({ data }: { data: Fitlogtype }) => {
     return (
@@ -28,7 +28,7 @@ const Saveddata = ({ data }: { data: Fitlogtype }) => {
                 <Link href={`/fitlog/${data.id}`}>
                     <button className='btn bg-black rounded-2xl text-white'>View Delails</button>
                 </Link>
-                <p className='text-2xl'><GoX /></p>
+                <p><Savedatadelet data={data}></Savedatadelet></p>
             </div>
         </div>
     );

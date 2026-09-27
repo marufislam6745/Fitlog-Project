@@ -6,7 +6,7 @@ import { CiClock2 } from "react-icons/ci";
 import { CiStar } from "react-icons/ci";
 import { FaFire } from "react-icons/fa";
 import { GoCheck } from "react-icons/go";
-import { GoX } from "react-icons/go";
+import Todayplandelet from './Todayplandelet';
 
 const Todayplan = ({ data }: { data: Fitlogtype }) => {
     return (
@@ -30,7 +30,7 @@ const Todayplan = ({ data }: { data: Fitlogtype }) => {
                     <button className='btn bg-black rounded-2xl text-white'>View Delails</button>
                 </Link>
                 <button className='btn bg-lime-400 rounded-2xl'><GoCheck />Mark as Done</button>
-                <p className='text-2xl'><GoX /></p>
+                <p><Todayplandelet data={data}></Todayplandelet></p>
             </div>
         </div>
     );
